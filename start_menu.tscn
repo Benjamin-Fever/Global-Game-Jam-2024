@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://chwhhfcptmmux"]
+[gd_scene load_steps=2 format=3 uid="uid://chwhhfcptmmux"]
+
+[ext_resource type="Script" path="res://Start Button.gd" id="1_ua34n"]
 
 [node name="Start Menu" type="Control"]
 layout_mode = 3
@@ -7,3 +9,103 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.5
+offset_top = -264.03
+offset_right = 217.5
+offset_bottom = -149.03
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 84
+text = "Game Title"
+
+[node name="Start Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.04
+offset_top = -110.05
+offset_right = 158.04
+offset_bottom = -29.0398
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+script = ExtResource("1_ua34n")
+
+[node name="Options Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.04
+offset_top = -8.02499
+offset_right = 158.04
+offset_bottom = 72.9853
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+
+[node name="Quit Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.04
+offset_top = 92.81
+offset_right = 158.04
+offset_bottom = 173.82
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
+[node name="Credits Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -523.0
+offset_top = 193.0
+offset_right = -206.92
+offset_bottom = 274.01
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credit"
+
+[node name="Controls button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 201.0
+offset_top = 193.0
+offset_right = 517.08
+offset_bottom = 274.01
+grow_horizontal = 2
+grow_vertical = 2
+text = "Controls"
