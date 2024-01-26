@@ -7,3 +7,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="HSlider" type="HSlider" parent="Panel"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 368.0
+offset_right = 819.0
+offset_bottom = 384.0
+
+[node name="Label" type="Label" parent="Panel/HSlider"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = -58.0
+offset_right = 274.0
+offset_bottom = -24.0
+theme_override_font_sizes/font_size = 24
+text = "Quality"
