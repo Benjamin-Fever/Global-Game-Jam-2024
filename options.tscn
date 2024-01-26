@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b7pybnbsrveqt"]
+[gd_scene load_steps=2 format=3 uid="uid://b7pybnbsrveqt"]
+
+[ext_resource type="Script" path="res://options.gd" id="1_4uolh"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4uolh")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -28,3 +31,40 @@ offset_right = 274.0
 offset_bottom = -24.0
 theme_override_font_sizes/font_size = 24
 text = "Quality"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 40.0
+offset_right = 67.0
+offset_bottom = 48.0
+text = "Go Back"
+
+[node name="OptionButton" type="OptionButton" parent="Panel"]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 192.0
+offset_right = 597.0
+offset_bottom = 228.0
+scale = Vector2(1.5, 1.5)
+item_count = 4
+selected = 3
+popup/item_0/text = "690x420"
+popup/item_0/id = 0
+popup/item_1/text = "1614x1175"
+popup/item_1/id = 1
+popup/item_2/text = "1367x1503"
+popup/item_2/id = 2
+popup/item_3/text = "1152x648"
+popup/item_3/id = 3
+
+[node name="Label" type="Label" parent="Panel/OptionButton"]
+layout_mode = 0
+offset_left = 31.3333
+offset_top = -30.0
+offset_right = 114.333
+offset_bottom = -7.0
+text = "Resolution"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="Panel/OptionButton" to="." method="_on_option_button_item_selected"]
