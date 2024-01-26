@@ -66,5 +66,16 @@ offset_right = 114.333
 offset_bottom = -7.0
 text = "Resolution"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1171.0
+offset_top = 310.0
+offset_right = 1257.0
+offset_bottom = 333.0
+text = "Hello there"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="item_selected" from="Panel/OptionButton" to="." method="_on_option_button_item_selected"]
