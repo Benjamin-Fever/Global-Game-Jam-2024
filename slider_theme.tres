@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://3emaiq3m2bd3"]
+
+[ext_resource type="Texture2D" uid="uid://c1dremtsksgvr" path="res://CasualUI_15_4.png" id="1_gou7h"]
+[ext_resource type="Texture2D" uid="uid://c11575iqc4e4u" path="res://CasualUI_15_2.png" id="2_f61nw"]
+[ext_resource type="Texture2D" uid="uid://dvsnxlhv6a38g" path="res://CasualUI_13_4.png" id="3_qf7qa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8iiib"]
+texture = ExtResource("2_f61nw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ck0y8"]
+texture = ExtResource("3_qf7qa")
+texture_margin_bottom = 56.0
+
+[resource]
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/icons/grabber = ExtResource("1_gou7h")
+HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_highlight = ExtResource("1_gou7h")
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_8iiib")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_8iiib")
+HSlider/styles/slider = SubResource("StyleBoxTexture_ck0y8")

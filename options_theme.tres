@@ -1,0 +1,43 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dksdytn1mxtjc"]
+
+[ext_resource type="Texture2D" uid="uid://b2138afcfso2b" path="res://CasualUI_5_1.png" id="1_ah40j"]
+[ext_resource type="Texture2D" uid="uid://c11575iqc4e4u" path="res://CasualUI_15_2.png" id="2_qjys1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vewqu"]
+atlas = ExtResource("1_ah40j")
+region = Rect2(34, 46, 63, 18)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70n10"]
+texture = ExtResource("2_qjys1")
+modulate_color = Color(0.682353, 0.682353, 0.682353, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wawsv"]
+texture = ExtResource("2_qjys1")
+modulate_color = Color(0.686275, 0.686275, 0.686275, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvyr6"]
+texture = ExtResource("2_qjys1")
+
+[resource]
+OptionButton/colors/font_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_disabled_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_focus_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_hover_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_outline_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_pressed_color = Color(0, 0, 0, 1)
+OptionButton/constants/arrow_margin = 0
+OptionButton/constants/h_separation = 0
+OptionButton/constants/modulate_arrow = 0
+OptionButton/constants/outline_size = 0
+OptionButton/font_sizes/font_size = 16
+OptionButton/fonts/font = null
+OptionButton/icons/arrow = SubResource("AtlasTexture_vewqu")
+OptionButton/styles/disabled = null
+OptionButton/styles/disabled_mirrored = null
+OptionButton/styles/focus = SubResource("StyleBoxTexture_70n10")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_wawsv")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_kvyr6")
+OptionButton/styles/normal_mirrored = null
+OptionButton/styles/pressed = null
+OptionButton/styles/pressed_mirrored = null
