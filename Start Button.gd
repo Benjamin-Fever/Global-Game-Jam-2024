@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 @onready var animPlayer = get_parent().get_node("AnimationPlayer")
 
