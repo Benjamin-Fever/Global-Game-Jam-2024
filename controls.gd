@@ -6,4 +6,4 @@ extends Control
 
 
 func _on_button_pressed():
-	camera.offset.x -= 30
+	camera.offset.x -= 50
