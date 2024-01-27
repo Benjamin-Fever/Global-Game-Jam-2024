@@ -4,7 +4,7 @@ extends Control
 
 var res = [Vector2(1.15,1.25),Vector2(0.75,0.95),Vector2(0.8,0.85),Vector2(1,1)]
 
-@onready var res_drop = $Panel/OptionButton
+@onready var res_drop = $Background/OptionButton
 
 func _ready():
 	if Global.started:

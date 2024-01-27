@@ -1,6 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7pybnbsrveqt"]
+[gd_scene load_steps=13 format=3 uid="uid://b7pybnbsrveqt"]
 
 [ext_resource type="Script" path="res://options.gd" id="1_4uolh"]
+[ext_resource type="Texture2D" uid="uid://dc6vm774q3ep0" path="res://CasualUI_16_3.png" id="2_b4lvb"]
+[ext_resource type="Texture2D" uid="uid://c11575iqc4e4u" path="res://CasualUI_15_2.png" id="3_c250a"]
+[ext_resource type="Texture2D" uid="uid://b2138afcfso2b" path="res://CasualUI_5_1.png" id="4_8dhxy"]
+[ext_resource type="Texture2D" uid="uid://c1dremtsksgvr" path="res://CasualUI_15_4.png" id="5_y7qjy"]
+[ext_resource type="Texture2D" uid="uid://dvsnxlhv6a38g" path="res://CasualUI_13_4.png" id="6_mvxa2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l0ok"]
+atlas = ExtResource("4_8dhxy")
+region = Rect2(34, 46, 63, 18)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80iqp"]
+texture = ExtResource("3_c250a")
+
+[sub_resource type="Theme" id="Theme_52qsb"]
+OptionButton/colors/font_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_disabled_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_focus_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_hover_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_outline_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_pressed_color = Color(0, 0, 0, 1)
+OptionButton/constants/arrow_margin = 5
+OptionButton/constants/h_separation = 0
+OptionButton/constants/modulate_arrow = 0
+OptionButton/constants/outline_size = 0
+OptionButton/font_sizes/font_size = 16
+OptionButton/fonts/font = null
+OptionButton/icons/arrow = SubResource("AtlasTexture_7l0ok")
+OptionButton/styles/disabled = null
+OptionButton/styles/disabled_mirrored = null
+OptionButton/styles/focus = null
+OptionButton/styles/hover = null
+OptionButton/styles/hover_mirrored = null
+OptionButton/styles/normal = SubResource("StyleBoxTexture_80iqp")
+OptionButton/styles/normal_mirrored = null
+OptionButton/styles/pressed = null
+OptionButton/styles/pressed_mirrored = null
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uwdjb"]
+texture = ExtResource("3_c250a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lidhy"]
+texture = ExtResource("6_mvxa2")
+texture_margin_bottom = 56.0
+
+[sub_resource type="Theme" id="Theme_kp2b5"]
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/icons/grabber = ExtResource("5_y7qjy")
+HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_highlight = ExtResource("5_y7qjy")
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_uwdjb")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_uwdjb")
+HSlider/styles/slider = SubResource("StyleBoxTexture_lidhy")
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -10,43 +65,62 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4uolh")
+metadata/_edit_vertical_guides_ = [596.0]
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -617.0
+offset_top = -342.0
+offset_right = 595.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b4lvb")
+expand_mode = 3
 
-[node name="HSlider" type="HSlider" parent="Panel"]
+[node name="Button" type="TextureButton" parent="Background"]
 layout_mode = 0
-offset_left = 326.0
-offset_top = 368.0
-offset_right = 819.0
-offset_bottom = 384.0
+offset_left = 100.0
+offset_top = 58.0
+offset_right = 453.0
+offset_bottom = 191.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_c250a")
 
-[node name="Label" type="Label" parent="Panel/HSlider"]
-layout_mode = 0
-offset_left = 190.0
-offset_top = -58.0
-offset_right = 274.0
-offset_bottom = -24.0
-theme_override_font_sizes/font_size = 24
-text = "Quality"
+[node name="Label" type="Label" parent="Background/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.6616
+offset_top = -60.9263
+offset_right = 97.3384
+offset_bottom = 54.0737
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.282353, 0.176471, 0.0431373, 0.603922)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.137255)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 26
+theme_override_font_sizes/font_size = 84
+text = "< Back"
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="OptionButton" type="OptionButton" parent="Background"]
 layout_mode = 0
-offset_left = 59.0
-offset_top = 40.0
-offset_right = 67.0
-offset_bottom = 48.0
-text = "Go Back"
-
-[node name="OptionButton" type="OptionButton" parent="Panel"]
-layout_mode = 0
-offset_left = 452.0
-offset_top = 192.0
-offset_right = 597.0
-offset_bottom = 228.0
-scale = Vector2(1.5, 1.5)
+offset_left = 453.0
+offset_top = 228.0
+offset_right = 598.0
+offset_bottom = 264.0
+scale = Vector2(2.5, 2.5)
+theme = SubResource("Theme_52qsb")
 item_count = 4
 selected = 3
 popup/item_0/text = "690x420"
@@ -62,20 +136,64 @@ popup/item_3/text = "1152x648"
 popup/item_3/id = 3
 popup/item_3/disabled = true
 
-[node name="Label" type="Label" parent="Panel/OptionButton"]
-layout_mode = 0
-offset_left = 31.3333
-offset_top = -30.0
-offset_right = 114.333
-offset_bottom = -7.0
+[node name="Label2" type="Label" parent="Background/OptionButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.1667
+offset_top = -52.6667
+offset_right = 55.8333
+offset_bottom = -24.6667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.572549, 0.392157, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.85098, 0.662745, 0.364706, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 30
+theme_override_font_sizes/font_size = 20
 text = "Resolution"
 
-[node name="More_Options" type="Button" parent="Panel"]
+[node name="HSlider" type="HSlider" parent="Background"]
 layout_mode = 0
-offset_left = 1213.0
-offset_top = 276.0
-offset_right = 1313.0
-offset_bottom = 352.0
+offset_left = 196.0
+offset_top = 405.0
+offset_right = 687.0
+offset_bottom = 497.0
+scale = Vector2(1.855, 1.855)
+theme = SubResource("Theme_kp2b5")
+value = 8.0
+
+[node name="Label2" type="Label" parent="Background/HSlider"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.8828
+offset_top = -68.1024
+offset_right = 59.1172
+offset_bottom = -40.1024
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.572549, 0.392157, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.85098, 0.662745, 0.364706, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 30
+theme_override_font_sizes/font_size = 20
+text = "Quality"
+
+[node name="More_Options" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 1254.0
+offset_top = 294.0
+offset_right = 1354.0
+offset_bottom = 370.0
 theme_override_font_sizes/font_size = 24
 text = "More
 Options"
@@ -83,6 +201,6 @@ Options"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
-[connection signal="item_selected" from="Panel/OptionButton" to="." method="_on_option_button_item_selected"]
-[connection signal="pressed" from="Panel/More_Options" to="." method="_on_more_options_pressed"]
+[connection signal="pressed" from="Background/Button" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="Background/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Background/More_Options" to="." method="_on_more_options_pressed"]
