@@ -2,11 +2,6 @@ extends Node
 
 var started : bool = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var pitch : float = 1.0
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+var db : float = 0.0
