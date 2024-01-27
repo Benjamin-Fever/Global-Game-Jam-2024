@@ -157,8 +157,8 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.137255)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
 theme_override_constants/shadow_outline_size = 26
-theme_override_font_sizes/font_size = 84
-text = "Game Title"
+theme_override_font_sizes/font_size = 71
+text = "Make It Start"
 
 [node name="Start Button" type="TextureButton" parent="."]
 top_level = true
