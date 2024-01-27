@@ -1,7 +1,8 @@
 extends Control
 
-@onready var slide = $Panel/HSlider
-@onready var butt = $Panel/Button
+@onready var slide = $Background/HSlider
+@onready var butt = $Background/Button
+@onready var flame : TextureRect = $Background/Flame
 
 var val = 0
 
@@ -13,6 +14,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	val = slide.value*2
+	var scaleNum = clamp(slide.value / 100, 0, 0.6)
+	flame.scale = Vector2(scaleNum, scaleNum)
 	butt.modulate = Color(1,1,1,val/255)
 	if val > 127:
 		butt.disabled = false
