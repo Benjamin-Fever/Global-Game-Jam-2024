@@ -15,16 +15,18 @@ run/main_scene="res://start_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://Global.gd"
 
 [display]
 
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="Global-game-jam-2024"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-
-[autoload]
-
-Global="*res://Global.gd"
-
