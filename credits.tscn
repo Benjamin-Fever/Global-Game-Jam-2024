@@ -30,6 +30,7 @@ texture = ExtResource("2_yls8x")
 expand_mode = 3
 
 [node name="Button2" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 98.0
 offset_top = 49.0
 offset_right = 169.0
@@ -65,10 +66,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -511.0
-offset_top = -168.0
-offset_right = 511.0
-offset_bottom = 168.0
+offset_left = -515.0
+offset_top = -164.0
+offset_right = 521.0
+offset_bottom = 290.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.572549, 0.392157, 0, 1)
@@ -76,9 +77,12 @@ theme_override_colors/font_shadow_color = Color(0.85098, 0.662745, 0.364706, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
 theme_override_constants/shadow_outline_size = 30
-theme_override_font_sizes/font_size = 80
-text = "Project Manager - Sammy
+theme_override_font_sizes/font_size = 60
+text = "Project Manager - Sami
 Developers - Callum & Ben
-Composer - Takumi"
+Composer - Takumi
+UI Assets - Casual UI by REXARD
+Candle Image -  by irfai on Pngtree"
+autowrap_mode = 3
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_pressed"]
