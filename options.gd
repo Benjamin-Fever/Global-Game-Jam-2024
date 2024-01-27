@@ -12,4 +12,4 @@ func _on_option_button_item_selected(index):
 	camera.zoom = res[index]
 
 func _on_more_options_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://more_options.tscn")
