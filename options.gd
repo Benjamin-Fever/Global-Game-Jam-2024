@@ -8,7 +8,7 @@ var res = [Vector2(1.15,1.25),Vector2(0.75,0.95),Vector2(0.8,0.85),Vector2(1,1)]
 
 func _ready():
 	if Global.started:
-		for i in range(0,3):
+		for i in range(0,4):
 			res_drop.set_item_disabled(i,false)
 
 func _on_button_pressed():

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://36kov081ovfd"]
+[gd_scene load_steps=2 format=3 uid="uid://36kov081ovfd"]
+
+[ext_resource type="Script" path="res://more_options.gd" id="1_8uw7m"]
 
 [node name="More Options" type="Control"]
 layout_mode = 3
@@ -7,3 +9,39 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8uw7m")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 580.0
+offset_right = 105.0
+offset_bottom = 634.0
+text = "Even More
+Options"
+
+[node name="HSlider" type="HSlider" parent="Panel"]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 190.0
+offset_right = 715.0
+offset_bottom = 206.0
+min_value = -127.0
+max_value = 127.0
+
+[node name="Label" type="Label" parent="Panel/HSlider"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = -66.0
+offset_right = 283.0
+offset_bottom = -21.0
+theme_override_font_sizes/font_size = 32
+text = "Brightness"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="drag_ended" from="Panel/HSlider" to="." method="_on_h_slider_drag_ended"]
