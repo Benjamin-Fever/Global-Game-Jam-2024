@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cg258ppsr85pk"]
+[gd_scene load_steps=3 format=3 uid="uid://cg258ppsr85pk"]
 
 [ext_resource type="Script" path="res://controls.gd" id="1_h8ik8"]
+[ext_resource type="Texture2D" uid="uid://c11575iqc4e4u" path="res://CasualUI_15_2.png" id="2_17e88"]
 
 [node name="Controls" type="Control"]
 layout_mode = 3
@@ -11,33 +12,55 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h8ik8")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label2" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -59.0
-offset_top = -11.5
-offset_right = 59.0
-offset_bottom = 11.5
+offset_left = -54.0
+offset_top = -11.0
+offset_right = 54.0
+offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 11
-text = "Use The Mouse"
+theme_override_colors/font_color = Color(0.572549, 0.392157, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.85098, 0.662745, 0.364706, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 30
+theme_override_font_sizes/font_size = 15
+text = "Use the mouse"
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="Button" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 98.0
 offset_top = 49.0
 offset_right = 169.0
 offset_bottom = 80.0
-text = "Go Back"
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("2_17e88")
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.6616
+offset_top = -60.9263
+offset_right = 97.3384
+offset_bottom = 54.0737
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.282353, 0.176471, 0.0431373, 0.603922)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.137255)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 26
+theme_override_font_sizes/font_size = 84
+text = "< Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

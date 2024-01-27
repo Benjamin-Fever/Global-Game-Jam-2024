@@ -1,6 +1,5 @@
 extends Control
 
-@onready var button = $Panel/Button
 @onready var camera = get_parent().get_node("Camera2D")
 
 
