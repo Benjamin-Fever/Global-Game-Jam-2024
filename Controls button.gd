@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 @onready var camera = get_parent().get_node("Camera2D")
 # Called when the node enters the scene tree for the first time.

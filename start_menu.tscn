@@ -1,13 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://chwhhfcptmmux"]
+[gd_scene load_steps=15 format=3 uid="uid://chwhhfcptmmux"]
 
 [ext_resource type="Script" path="res://start_menu.gd" id="1_cmohi"]
 [ext_resource type="Script" path="res://Start Button.gd" id="1_ua34n"]
 [ext_resource type="Script" path="res://ScreenChangeButton.gd" id="2_5gc84"]
+[ext_resource type="Texture2D" uid="uid://dc6vm774q3ep0" path="res://CasualUI_16_3.png" id="2_x0rhu"]
 [ext_resource type="PackedScene" uid="uid://b7pybnbsrveqt" path="res://options.tscn" id="3_383ck"]
+[ext_resource type="Texture2D" uid="uid://on2nnn14axge" path="res://CasualUI_15_3.png" id="3_ky6p8"]
 [ext_resource type="PackedScene" uid="uid://bb0fieibakdgt" path="res://credits.tscn" id="4_2buyc"]
 [ext_resource type="Script" path="res://Controls button.gd" id="5_6o85b"]
 [ext_resource type="Script" path="res://ExitConfirm.gd" id="5_gq4cb"]
 [ext_resource type="PackedScene" uid="uid://cg258ppsr85pk" path="res://controls.tscn" id="5_k2b66"]
+[ext_resource type="Texture2D" uid="uid://c11575iqc4e4u" path="res://CasualUI_15_2.png" id="5_mdmn5"]
 
 [sub_resource type="Animation" id="Animation_7xmax"]
 length = 0.001
@@ -21,24 +24,36 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(417.96, 213.95)]
+"values": [Vector2(403, 230)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Start Button:scale")
+tracks/1/path = NodePath("Start Button:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Start Button:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0.7, 0.7)]
 }
 
 [sub_resource type="Animation" id="Animation_6lkiv"]
 resource_name = "StartAnimation"
-length = 2.9095
+length = 1.9
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -46,22 +61,34 @@ tracks/0/path = NodePath("Start Button:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(417.96, 213.95), Vector2(418, 285), Vector2(449, 324), Vector2(489, 333), Vector2(534, 349), Vector2(578, 357)]
+"values": [Vector2(403, 230), Vector2(403, 251), Vector2(403, 295), Vector2(403, 336)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Start Button:scale")
+tracks/1/path = NodePath("Start Button:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 1.5, 2, 2.5),
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Start Button:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.2, 1.5, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(0.56, 0.56), Vector2(0.21, 0.21), Vector2(0, 0)]
+"values": [Vector2(0.7, 0.7), Vector2(0.7, 0.7), Vector2(0.545, 0.545), Vector2(0.105, 0.105), Vector2(1e-05, 1e-05)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lwuej"]
@@ -79,77 +106,154 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cmohi")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -217.5
-offset_top = -264.03
-offset_right = 217.5
-offset_bottom = -149.03
+offset_left = -644.0
+offset_top = -342.0
+offset_right = 1763.0
+offset_bottom = 326.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_x0rhu")
+expand_mode = 3
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -334.0
+offset_right = 233.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(247, 119)
+texture = ExtResource("3_ky6p8")
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.357
+offset_top = -108.786
+offset_right = 216.643
+offset_bottom = 6.21428
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.282353, 0.176471, 0.0431373, 0.603922)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.137255)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 26
 theme_override_font_sizes/font_size = 84
 text = "Game Title"
 
-[node name="Options Button" type="Button" parent="."]
+[node name="Start Button" type="TextureButton" parent="."]
+top_level = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -158.04
-offset_top = -8.02499
-offset_right = 158.04
-offset_bottom = 72.9853
+offset_left = -173.0
+offset_top = -94.0
+offset_right = 180.0
+offset_bottom = 39.0012
 grow_horizontal = 2
 grow_vertical = 2
-text = "Options"
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(188.571, 70)
+texture_normal = ExtResource("5_mdmn5")
+script = ExtResource("1_ua34n")
+
+[node name="Label" type="Label" parent="Start Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.6616
+offset_top = -60.9263
+offset_right = 97.3384
+offset_bottom = 54.0737
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.282353, 0.176471, 0.0431373, 0.603922)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.137255)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 26
+theme_override_font_sizes/font_size = 84
+text = "Start"
+
+[node name="Options Button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = 33.0
+offset_right = 237.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("5_mdmn5")
 script = ExtResource("2_5gc84")
 sceneChange = ExtResource("3_383ck")
 
-[node name="Start Button" type="Button" parent="."]
+[node name="Label" type="Label" parent="Options Button"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 417.96
-offset_top = 213.95
-offset_right = 734.041
-offset_bottom = 294.961
+offset_left = -99.6616
+offset_top = -60.9263
+offset_right = 97.3384
+offset_bottom = 54.0737
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start"
-script = ExtResource("1_ua34n")
+theme_override_colors/font_color = Color(0.282353, 0.176471, 0.0431373, 0.603922)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.137255)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 26
+theme_override_font_sizes/font_size = 84
+text = "Options"
 
-[node name="QuitButton" type="Button" parent="."]
+[node name="QuitButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -158.04
-offset_top = 92.81
-offset_right = 158.04
-offset_bottom = 173.82
+offset_left = -116.0
+offset_top = 142.0
+offset_right = 237.0
+offset_bottom = 275.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Quit"
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("5_mdmn5")
 
 [node name="ExitConfirm" type="Window" parent="QuitButton"]
 initial_position = 1
@@ -193,38 +297,104 @@ text = "Yes"
 layout_mode = 2
 text = "No"
 
-[node name="Credits Button" type="Button" parent="."]
+[node name="Label" type="Label" parent="QuitButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -523.0
-offset_top = 193.0
-offset_right = -206.92
-offset_bottom = 274.01
+offset_left = -99.6616
+offset_top = -60.9263
+offset_right = 97.3384
+offset_bottom = 54.0737
 grow_horizontal = 2
 grow_vertical = 2
-text = "Credit"
+theme_override_colors/font_color = Color(0.282353, 0.176471, 0.0431373, 0.603922)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.137255)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 26
+theme_override_font_sizes/font_size = 84
+text = "Quit
+"
+
+[node name="Credits Button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -474.0
+offset_top = 177.0
+offset_right = -121.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("5_mdmn5")
 script = ExtResource("2_5gc84")
 sceneChange = ExtResource("4_2buyc")
 
-[node name="Controls button" type="Button" parent="."]
+[node name="Label" type="Label" parent="Credits Button"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 201.0
-offset_top = 193.0
-offset_right = 517.08
-offset_bottom = 274.01
+offset_left = -99.6616
+offset_top = -60.9263
+offset_right = 97.3384
+offset_bottom = 54.0737
 grow_horizontal = 2
 grow_vertical = 2
-text = "Controls"
+theme_override_colors/font_color = Color(0.282353, 0.176471, 0.0431373, 0.603922)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.137255)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 26
+theme_override_font_sizes/font_size = 84
+text = "Credits"
+
+[node name="Controls button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 246.0
+offset_top = 177.0
+offset_right = 599.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("5_mdmn5")
 script = ExtResource("5_6o85b")
+
+[node name="Label" type="Label" parent="Controls button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.6616
+offset_top = -60.9263
+offset_right = 97.3384
+offset_bottom = 54.0737
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.282353, 0.176471, 0.0431373, 0.603922)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.137255)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 26
+theme_override_font_sizes/font_size = 84
+text = "Controls"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
