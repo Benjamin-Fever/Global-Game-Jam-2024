@@ -1,9 +1,240 @@
-[gd_scene format=3 uid="uid://dussan2tby548"]
+[gd_scene load_steps=2 format=3 uid="uid://dussan2tby548"]
 
-[node name="Even More" type="Control"]
+[ext_resource type="Script" path="res://even_more_options.gd" id="1_eauyq"]
+
+[node name="Even More" type="Control" node_paths=PackedStringArray("syncNode", "syncPosNode")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_eauyq")
+syncNode = [NodePath("size"), NodePath("volume"), NodePath("pitch"), NodePath("Quality"), NodePath("VSync"), NodePath("ColorRect")]
+syncPosNode = [NodePath("sizePos"), NodePath("volumePos"), NodePath("pitchPos"), NodePath("qualityPos"), NodePath("vSyncPos"), NodePath("rectPos")]
+
+[node name="size" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -467.0
+offset_top = -226.0
+offset_right = -67.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+min_value = 1.0
+max_value = 50.0
+step = 0.1
+value = 1.0
+
+[node name="Label" type="Label" parent="size"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = -58.0
+offset_right = 274.0
+offset_bottom = -24.0
+theme_override_font_sizes/font_size = 24
+text = "Size"
+
+[node name="volume" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = -94.0
+offset_right = 465.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2, 7)
+
+[node name="Label" type="Label" parent="volume"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = -58.0
+offset_right = 274.0
+offset_bottom = -24.0
+theme_override_font_sizes/font_size = 24
+text = "Volume"
+
+[node name="pitch" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -474.0
+offset_top = -18.0
+offset_right = -74.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(3, 11)
+
+[node name="Label" type="Label" parent="pitch"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = -58.0
+offset_right = 274.0
+offset_bottom = -24.0
+theme_override_font_sizes/font_size = 24
+text = "Pitch"
+
+[node name="Quality" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = 91.0
+offset_right = 382.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(3, 7)
+
+[node name="Label" type="Label" parent="Quality"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = -58.0
+offset_right = 274.0
+offset_bottom = -24.0
+theme_override_font_sizes/font_size = 24
+text = "Quality"
+
+[node name="VSync" type="CheckBox" parent="."]
+offset_left = 581.0
+offset_top = 481.0
+offset_right = 605.0
+offset_bottom = 505.0
+scale = Vector2(0.33, 0.33)
+pivot_offset = Vector2(0, 11.8459)
+disabled = true
+
+[node name="Label" type="Label" parent="VSync"]
+layout_mode = 0
+offset_left = -43.0
+offset_top = -1.0
+offset_right = 3.0
+offset_bottom = 22.0
+text = "VSync"
+
+[node name="Start Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -530.0
+offset_top = 176.0
+offset_right = -213.919
+offset_bottom = 257.011
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 479.0
+offset_right = 396.0
+offset_bottom = 612.0
+color = Color(0.580392, 0, 0, 1)
+
+[node name="sizePos" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -209.0
+offset_right = 20.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="volumePos" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -93.0
+offset_right = 20.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pitchPos" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -6.0
+offset_right = 20.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="qualityPos" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 85.0
+offset_right = 20.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vSyncPos" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 164.0
+offset_right = 20.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="rectPos" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 259.0
+offset_right = 20.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="VSync" to="." method="_on_v_sync_pressed"]
