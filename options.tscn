@@ -51,12 +51,16 @@ item_count = 4
 selected = 3
 popup/item_0/text = "690x420"
 popup/item_0/id = 0
+popup/item_0/disabled = true
 popup/item_1/text = "1614x1175"
 popup/item_1/id = 1
+popup/item_1/disabled = true
 popup/item_2/text = "1367x1503"
 popup/item_2/id = 2
+popup/item_2/disabled = true
 popup/item_3/text = "1152x648"
 popup/item_3/id = 3
+popup/item_3/disabled = true
 
 [node name="Label" type="Label" parent="Panel/OptionButton"]
 layout_mode = 0
