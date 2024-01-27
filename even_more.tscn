@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dussan2tby548"]
+[gd_scene load_steps=3 format=3 uid="uid://dussan2tby548"]
 
 [ext_resource type="Script" path="res://even_more_options.gd" id="1_eauyq"]
+[ext_resource type="Script" path="res://EndExitConfirm.gd" id="2_brgvq"]
 
 [node name="Even More" type="Control" node_paths=PackedStringArray("syncNode", "syncPosNode")]
 layout_mode = 3
@@ -146,7 +147,7 @@ offset_right = 3.0
 offset_bottom = 22.0
 text = "VSync"
 
-[node name="Start Button" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -160,6 +161,48 @@ offset_bottom = 257.011
 grow_horizontal = 2
 grow_vertical = 2
 text = "Start"
+
+[node name="ExitConfirm" type="Window" parent="StartButton"]
+initial_position = 1
+size = Vector2i(150, 100)
+visible = false
+script = ExtResource("2_brgvq")
+
+[node name="Panel" type="Panel" parent="StartButton/ExitConfirm"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="StartButton/ExitConfirm/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Are you sure?"
+horizontal_alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="StartButton/ExitConfirm/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+split_offset = 70
+dragger_visibility = 1
+
+[node name="YesButton" type="Button" parent="StartButton/ExitConfirm/Panel/HSplitContainer"]
+layout_mode = 2
+text = "Yes"
+
+[node name="NoButton" type="Button" parent="StartButton/ExitConfirm/Panel/HSplitContainer"]
+layout_mode = 2
+text = "No"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -254,3 +297,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [connection signal="pressed" from="VSync" to="." method="_on_v_sync_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="close_requested" from="StartButton/ExitConfirm" to="StartButton/ExitConfirm" method="_on_close_requested"]
+[connection signal="pressed" from="StartButton/ExitConfirm/Panel/HSplitContainer/YesButton" to="StartButton/ExitConfirm" method="_on_yes_button_pressed"]
+[connection signal="pressed" from="StartButton/ExitConfirm/Panel/HSplitContainer/NoButton" to="StartButton/ExitConfirm" method="_on_no_button_pressed"]
