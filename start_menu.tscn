@@ -127,10 +127,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 417.96
-offset_top = 213.95
-offset_right = 734.041
-offset_bottom = 294.961
+offset_left = -158.04
+offset_top = -110.05
+offset_right = 158.041
+offset_bottom = -29.0394
 grow_horizontal = 2
 grow_vertical = 2
 text = "Start"
@@ -250,5 +250,6 @@ theme_override_font_sizes/font_size = 15
 text = "Version: 3.1415926535897932384617153643678925903600116892589235420199561121968230301952035301852"
 
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="close_requested" from="QuitButton/ExitConfirm" to="QuitButton/ExitConfirm" method="_on_close_requested"]
 [connection signal="pressed" from="QuitButton/ExitConfirm/Panel/HSplitContainer/YesButton" to="QuitButton/ExitConfirm" method="_on_yes_button_pressed"]
 [connection signal="pressed" from="QuitButton/ExitConfirm/Panel/HSplitContainer/NoButton" to="QuitButton/ExitConfirm" method="_on_no_button_pressed"]

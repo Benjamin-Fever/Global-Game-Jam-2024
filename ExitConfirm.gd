@@ -8,3 +8,8 @@ func _on_no_button_pressed():
 
 func _on_yes_button_pressed():
 	label.text = "Then just alt-f4"
+
+
+func _on_close_requested():
+	hide()
+	label.text = "Are you sure?"
