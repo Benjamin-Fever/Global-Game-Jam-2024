@@ -396,14 +396,6 @@ theme_override_constants/shadow_outline_size = 26
 theme_override_font_sizes/font_size = 84
 text = "Controls"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_lwuej")
-}
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(576, 324)
-
 [node name="Controls" parent="." instance=ExtResource("5_k2b66")]
 layout_mode = 1
 offset_left = 1152.0
@@ -411,13 +403,26 @@ offset_right = 1152.0
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1127.0
-offset_top = 645.0
-offset_right = 1928.0
-offset_bottom = 668.0
+offset_left = 1123.0
+offset_top = 622.0
+offset_right = 1927.0
+offset_bottom = 645.0
 rotation = 4.71239
+theme_override_colors/font_color = Color(0.572549, 0.392157, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.85098, 0.662745, 0.364706, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 30
 theme_override_font_sizes/font_size = 15
 text = "Version: 3.1415926535897932384617153643678925903600116892589235420199561121968230301952035301852"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lwuej")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(576, 324)
 
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="close_requested" from="QuitButton/ExitConfirm" to="QuitButton/ExitConfirm" method="_on_close_requested"]
