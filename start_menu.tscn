@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://chwhhfcptmmux"]
+[gd_scene load_steps=10 format=3 uid="uid://chwhhfcptmmux"]
 
 [ext_resource type="Script" path="res://Start Button.gd" id="1_ua34n"]
 [ext_resource type="Script" path="res://ScreenChangeButton.gd" id="2_5gc84"]
 [ext_resource type="PackedScene" uid="uid://b7pybnbsrveqt" path="res://options.tscn" id="3_383ck"]
 [ext_resource type="PackedScene" uid="uid://bb0fieibakdgt" path="res://credits.tscn" id="4_2buyc"]
+[ext_resource type="Script" path="res://Controls button.gd" id="5_6o85b"]
 [ext_resource type="PackedScene" uid="uid://cg258ppsr85pk" path="res://controls.tscn" id="5_k2b66"]
 
 [sub_resource type="Animation" id="Animation_7xmax"]
@@ -126,7 +127,7 @@ anchor_bottom = 0.5
 offset_left = -158.04
 offset_top = -110.05
 offset_right = 158.041
-offset_bottom = -29.039
+offset_bottom = -29.0394
 grow_horizontal = 2
 grow_vertical = 2
 text = "Start"
@@ -178,10 +179,17 @@ offset_bottom = 274.01
 grow_horizontal = 2
 grow_vertical = 2
 text = "Controls"
-script = ExtResource("2_5gc84")
-sceneChange = ExtResource("5_k2b66")
+script = ExtResource("5_6o85b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_lwuej")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(576, 324)
+
+[node name="Controls" parent="." instance=ExtResource("5_k2b66")]
+layout_mode = 1
+offset_left = 1152.0
+offset_right = 1152.0
