@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 @export var sceneChange : PackedScene
 # Called when the node enters the scene tree for the first time.
