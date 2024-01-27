@@ -10,3 +10,6 @@ func _on_button_pressed():
 
 func _on_option_button_item_selected(index):
 	camera.zoom = res[index]
+
+func _on_more_options_pressed():
+	pass # Replace with function body.
