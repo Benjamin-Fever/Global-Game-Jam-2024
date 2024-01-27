@@ -114,6 +114,7 @@ theme_override_font_sizes/font_size = 24
 text = "Quality"
 
 [node name="VSync" type="CheckBox" parent="."]
+layout_mode = 0
 offset_left = 581.0
 offset_top = 481.0
 offset_right = 605.0
