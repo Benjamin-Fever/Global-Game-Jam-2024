@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dussan2tby548"]
+[gd_scene load_steps=7 format=3 uid="uid://dussan2tby548"]
 
 [ext_resource type="Script" path="res://even_more_options.gd" id="1_eauyq"]
+[ext_resource type="Texture2D" uid="uid://dc6vm774q3ep0" path="res://CasualUI_16_3.png" id="2_po5pq"]
+[ext_resource type="Theme" uid="uid://3emaiq3m2bd3" path="res://slider_theme.tres" id="3_oyurl"]
+[ext_resource type="Texture2D" uid="uid://dh0of7u4idh7u" path="res://CasualUI_16_1.png" id="4_0650g"]
+[ext_resource type="Texture2D" uid="uid://c11575iqc4e4u" path="res://CasualUI_15_2.png" id="4_hperr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_202wi"]
+atlas = ExtResource("4_0650g")
+region = Rect2(0, 0, 812, 169)
 
 [node name="Even More" type="Control" node_paths=PackedStringArray("syncNode", "syncPosNode")]
 layout_mode = 3
@@ -10,8 +18,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eauyq")
-syncNode = [NodePath("size"), NodePath("volume"), NodePath("pitch"), NodePath("Quality"), NodePath("VSync"), NodePath("ColorRect")]
+syncNode = [NodePath("size"), NodePath("volume"), NodePath("pitch"), NodePath("Quality"), NodePath("VSync"), NodePath("TextureRect")]
 syncPosNode = [NodePath("sizePos"), NodePath("volumePos"), NodePath("pitchPos"), NodePath("qualityPos"), NodePath("vSyncPos"), NodePath("rectPos")]
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -617.0
+offset_top = -342.0
+offset_right = 595.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_po5pq")
+expand_mode = 3
 
 [node name="size" type="HSlider" parent="."]
 layout_mode = 1
@@ -27,18 +51,31 @@ offset_bottom = -201.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(8, 8)
+theme = ExtResource("3_oyurl")
 min_value = 1.0
 max_value = 50.0
 step = 0.1
 value = 1.0
 
-[node name="Label" type="Label" parent="size"]
-layout_mode = 0
-offset_left = 190.0
-offset_top = -58.0
-offset_right = 274.0
-offset_bottom = -24.0
-theme_override_font_sizes/font_size = 24
+[node name="Label2" type="Label" parent="size"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -88.5
+offset_right = 113.0
+offset_bottom = -25.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.572549, 0.392157, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.85098, 0.662745, 0.364706, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 30
+theme_override_font_sizes/font_size = 45
 text = "Size"
 
 [node name="volume" type="HSlider" parent="."]
@@ -55,24 +92,50 @@ offset_bottom = -69.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(2, 7)
+theme = ExtResource("3_oyurl")
 max_value = 34.0
 value = 10.0
 
-[node name="Label" type="Label" parent="volume"]
-layout_mode = 0
-offset_left = 190.0
-offset_top = -58.0
-offset_right = 274.0
-offset_bottom = -24.0
-theme_override_font_sizes/font_size = 24
+[node name="Label2" type="Label" parent="volume"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -104.0
+offset_right = 77.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.572549, 0.392157, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.85098, 0.662745, 0.364706, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 30
+theme_override_font_sizes/font_size = 45
 text = "Volume"
 
 [node name="PrimeNo" type="Label" parent="volume"]
-layout_mode = 0
-offset_left = 409.0
-offset_top = -1.0
-offset_right = 449.0
-offset_bottom = 22.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 213.0
+offset_top = -28.5
+offset_right = 379.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.572549, 0.392157, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.85098, 0.662745, 0.364706, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 30
+theme_override_font_sizes/font_size = 33
 text = "2.0"
 
 [node name="pitch" type="HSlider" parent="."]
@@ -89,18 +152,31 @@ offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(3, 11)
+theme = ExtResource("3_oyurl")
 min_value = 0.1
 max_value = 4.0
 step = 0.1
 value = 1.0
 
-[node name="Label" type="Label" parent="pitch"]
-layout_mode = 0
-offset_left = 190.0
-offset_top = -58.0
-offset_right = 274.0
-offset_bottom = -24.0
-theme_override_font_sizes/font_size = 24
+[node name="Label2" type="Label" parent="pitch"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -104.0
+offset_right = 73.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.572549, 0.392157, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.85098, 0.662745, 0.364706, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 30
+theme_override_font_sizes/font_size = 45
 text = "Pitch"
 
 [node name="Quality" type="HSlider" parent="."]
@@ -117,18 +193,32 @@ offset_bottom = 116.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(3, 7)
+theme = ExtResource("3_oyurl")
 max_value = 10.0
 
-[node name="Label" type="Label" parent="Quality"]
-layout_mode = 0
-offset_left = 190.0
-offset_top = -58.0
-offset_right = 274.0
-offset_bottom = -24.0
-theme_override_font_sizes/font_size = 24
+[node name="Label2" type="Label" parent="Quality"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -104.0
+offset_right = 73.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.572549, 0.392157, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.85098, 0.662745, 0.364706, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 30
+theme_override_font_sizes/font_size = 45
 text = "Quality"
 
 [node name="VSync" type="CheckBox" parent="."]
+top_level = true
 layout_mode = 0
 offset_left = 581.0
 offset_top = 481.0
@@ -146,28 +236,52 @@ offset_right = 3.0
 offset_bottom = 22.0
 text = "VSync"
 
-[node name="Start Button" type="Button" parent="."]
+[node name="Start Button" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -530.0
-offset_top = 176.0
-offset_right = -213.919
-offset_bottom = 257.011
+offset_left = -580.0
+offset_top = 164.0
+offset_right = -227.0
+offset_bottom = 297.001
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(188.571, 70)
+texture_normal = ExtResource("4_hperr")
+
+[node name="Label" type="Label" parent="Start Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.6616
+offset_top = -60.9263
+offset_right = 97.3384
+offset_bottom = 54.0737
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.282353, 0.176471, 0.0431373, 0.603922)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.137255)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 26
+theme_override_font_sizes/font_size = 84
 text = "Start"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 479.0
-offset_right = 396.0
-offset_bottom = 612.0
-color = Color(0.580392, 0, 0, 1)
+offset_left = 12.0
+offset_top = 481.0
+offset_right = 824.0
+offset_bottom = 650.0
+scale = Vector2(0.617399, 0.845033)
+texture = SubResource("AtlasTexture_202wi")
 
 [node name="sizePos" type="Control" parent="."]
 layout_mode = 1
@@ -176,10 +290,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -209.0
-offset_right = 20.0
-offset_bottom = -169.0
+offset_left = -211.0
+offset_top = -256.0
+offset_right = -171.0
+offset_bottom = -216.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -190,10 +304,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -93.0
-offset_right = 20.0
-offset_bottom = -53.0
+offset_left = -211.0
+offset_top = -126.0
+offset_right = -171.0
+offset_bottom = -86.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -204,10 +318,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -6.0
-offset_right = 20.0
-offset_bottom = 34.0
+offset_left = -211.0
+offset_top = 13.0
+offset_right = -171.0
+offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -218,10 +332,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = 85.0
-offset_right = 20.0
-offset_bottom = 125.0
+offset_left = -208.0
+offset_top = 117.0
+offset_right = -168.0
+offset_bottom = 157.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -232,10 +346,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = 164.0
-offset_right = 20.0
-offset_bottom = 204.0
+offset_left = -5.0
+offset_top = 184.0
+offset_right = 35.0
+offset_bottom = 224.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -246,10 +360,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = 259.0
-offset_right = 20.0
-offset_bottom = 299.0
+offset_left = -211.0
+offset_top = 249.0
+offset_right = -171.0
+offset_bottom = 289.0
 grow_horizontal = 2
 grow_vertical = 2
 
