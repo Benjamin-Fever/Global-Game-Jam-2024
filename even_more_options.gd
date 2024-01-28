@@ -7,7 +7,7 @@ extends Control
 @onready var volume = $volume
 @onready var pitch = $pitch
 @onready var num = $volume/PrimeNo
-@onready var window = $StartButton/ExitConfirm
+@onready var window = $StartButton/EndExitConfirm
 
 @onready var primes = [-29.0,-23.0,-19.0,-17.0,-13.0,-11.0,-7.0,-5.0,-3.0,-2.0,
 2.0, 3.0, 5.0, 7.0, 11.0, 13.0, 17.0, 19.0, 23.0, 29.0, 31.0, 37.0, 41.0, 43.0, 
